@@ -9,9 +9,9 @@ router.post("/register", userController.register);
 router.post("/login", userController.login);
 
 // Protected Routes
-router.get("/", authMiddleware, userController.getUsers);
+router.get("/", userController.getUsers);
 router.get("/:id", authMiddleware, userController.getUser);
 router.put("/:id", authMiddleware, userController.updateUser);
-router.delete("/:id", authMiddleware, userController.deleteUser);
+router.delete("/:id", userController.deleteUser);
 
 module.exports = router;
