@@ -30,12 +30,6 @@ exports.createTask = async (req, res) => {
             });
         }
 
-        if (!task || !taskDone || !color) {
-            res.status(401).json({
-                message: "All field requird",
-            });
-        }
-
         const savedTask = await Task.create({
             userId: user,
             task,
